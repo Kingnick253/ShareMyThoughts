@@ -13,6 +13,7 @@ const userSchema = new Schema(
           required: true,
           unique: true,  
         //   ** regex email validator **
+          match: /.+\@.+\..+/,
         },
         thoughts:[{
             type: Schema.Types.ObjectId,
