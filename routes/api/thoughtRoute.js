@@ -5,15 +5,15 @@ router.route('/')
     .get(getThought)
     .post(createThought);
 
-router.route('/:thoughtId')
+router.route('/:id')
     .get(getOneThought)
     .put(updateThought)
     .delete(deleteThought);
 
-router.route('/:thoughtId/reactions')
+router.route('/:id/reactions')
     .post(addReaction);
 
-router.route('/:thoughtId/reactions/:reactionId')
+router.route('/:id/reactions/:reactionId')
     .delete(removeReaction);
 
 module.exports = router;
