@@ -2,7 +2,7 @@
 const { user, thought } = require("../models");
 
 module.exports = {
-  getAllUsers(req, res) {
+  getUsers(req, res) {
     user.find({})
         .populate({path: 'thoughts', select: '-__v'})
         .select('-__v')
@@ -36,7 +36,7 @@ module.exports = {
             .then((user) => res.json(user))
             .catch((err) => {
                 console.log(err);
-                return res.status(500).JSON(err);
+                return res.status(500).json(err);
             });
     },
 
