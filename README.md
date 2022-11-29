@@ -18,7 +18,8 @@
     
     
 ## Usage
-  
+  [ShareyourThoughts.webm](https://user-images.githubusercontent.com/70127239/204438604-bbd20c93-b738-474a-9880-223eb2b74e38.webm)
+
     
 ## Credits
 Collaborators: Nicholas Webb
