@@ -8,8 +8,7 @@ module.exports ={
         .catch((err) => res.status(500).json(err));
     },
     getOneThought(req, res) {
-        thought
-          .findOne({ _id: req.params.thoughtId })
+        thought.findOne({ _id: req.params.thoughtId })
           .then((thought) =>
             !thought
               ? res.status(404).json({ message: "No thought found with this ID" })
