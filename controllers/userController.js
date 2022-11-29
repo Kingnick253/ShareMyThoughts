@@ -4,8 +4,6 @@ const { user, thought } = require("../models");
 module.exports = {
   getUsers(req, res) {
     user.find({})
-        .populate({path: 'thoughts', select: '-__v'})
-        .select('-__v')
         .then(userData => {
             res.json(userData);
             console.log(userData);
@@ -17,7 +15,9 @@ module.exports = {
 },
 
     getUserById(req, res) {
-      user.findOne({ _id: req.params.id })
+      user.findOne({ _id: req.params.userId })
+          .select("-__v")
+          .populate('thoughts friends')
           .then(userData => {
               if(!userData) {
                   res.status(400).json({message: 'No User Found with This ID!'});
